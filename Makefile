@@ -45,8 +45,8 @@ clean:
 
 deps:
 	mkdir -p assets
-	curl -k https://bootstrap.pypa.io/get-pip.py -o assets/get-pip.py
-	curl -k https://physics.princeton.edu/pulsar/K1JT/wsjtx-2.1.2.tgz -o assets/wsjtx-2.1.2.tgz
+	curl -k https://bootstrap.pypa.io/pip/2.7/get-pip.py -o assets/get-pip.py
+	curl -Lk https://sourceforge.net/projects/wsjt/files/wsjtx-2.1.2/wsjtx-2.1.2.tgz/download -o assets/wsjtx-2.1.2.tgz
 
 %/run:
 	$(DOCKER) run --rm -p 8100:8100 -p 8101:8101 -v ~/.shinysdr:/config \
