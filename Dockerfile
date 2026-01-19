@@ -102,8 +102,8 @@ RUN git clone https://github.com/bitglue/gr-radioteletype.git && \
 RUN git clone https://github.com/kpreid/shinysdr.git && \
   cd shinysdr && \
   export PYTHONHTTPSVERIFY=0 && \
-  python setup.py build && \
-  python setup.py install && \
+  pip install typing Automat==20.2.0 && \
+  pip install . && \
   export PYTHONHTTPSVERIFY= && \
   cd /build && rm -rf /build/shinysdr
 
