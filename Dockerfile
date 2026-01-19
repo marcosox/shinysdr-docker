@@ -1,6 +1,6 @@
 ARG PLATFORM=amd64
 FROM ${PLATFORM}/debian:10-slim
-LABEL maintainer "Jefferson J. Hunt <jeffersonjhunt@gmail.com>"
+LABEL maintainer="Jefferson J. Hunt <jeffersonjhunt@gmail.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MAKEFLAGS='-j 8'
