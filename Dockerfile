@@ -5,6 +5,8 @@ LABEL maintainer="Jefferson J. Hunt <jeffersonjhunt@gmail.com>"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MAKEFLAGS='-j 8'
 
+RUN sed -i 's/deb.debian.org/archive.debian.org/' /etc/apt/sources.list
+
 # Ensure that we always use UTF-8, US English locale and UTC time
 RUN apt-get update && apt-get install -y locales && \
   localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && \
@@ -28,8 +30,8 @@ RUN apt-get install -y \
       swig \
       texinfo \
       dh-autoreconf \
-      python \
-      python-dev \
+      python2.7 \
+      python2.7-dev \
       gfortran \
       gr-osmosdr \
       gnuradio \
